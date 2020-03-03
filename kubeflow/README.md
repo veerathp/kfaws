@@ -95,4 +95,20 @@ Get Kubeflow service endpoint:
 kubectl get ingress -n istio-system -o jsonpath='{.items[0].status.loadBalancer.ingress[0].hostname}'
 
 ```
+First time when you login, Click on Start Setup and then specify a namespace (eg. kf-sm-workshop)
+
+Click finish to view the dashboard
+
+### Jupyter notebook on Kubeflow
+
+In Kubeflow dashboard, click on Create a new Notebook server:
+
+In the quick shortcuts, click on the "Create a Notebook server" link an select the namespace created above and provide the required details and click launch.
+
+
+
+
+
+
+
 
