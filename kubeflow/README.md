@@ -86,3 +86,13 @@ Wait for all the resources to become ready in the kubeflow namespace. Run the co
 
 
 kubectl get pods -n kubeflow
+
+### Kubeflow Dashboard
+
+Get Kubeflow service endpoint:
+
+```
+kubectl get ingress -n istio-system -o jsonpath='{.items[0].status.loadBalancer.ingress[0].hostname}'
+
+```
+
