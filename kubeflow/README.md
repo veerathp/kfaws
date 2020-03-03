@@ -103,7 +103,7 @@ Click finish to view the dashboard
 
 In the Kubeflow dashboard, click on Create a new Notebook server:
 
-In the quick shortcuts, click on the "Create a Notebook server" link an select the namespace created above and provide the required details and click launch.
+In the quick shortcuts, click on the "Create a Notebook server" link an select the namespace created above, provide the required details and click launch.
 
 
 
