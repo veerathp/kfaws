@@ -21,6 +21,15 @@ sudo mv -v /tmp/eksctl /usr/local/bin
 
 ```
 
+Alternatively, macOS users can use Homebrew:
+
+```
+brew tap weaveworks/tap
+brew install weaveworks/tap/eksctl
+```
+and Windows users can use chocolatey:
+
+chocolatey install eksctl
 
 Confirm the ekctl command works by executing the following command
 
@@ -28,7 +37,7 @@ Confirm the ekctl command works by executing the following command
 eksctl version
 ```
 
-Create an EKS cluster using the following ekctl command
+Create an EKS cluster with six nodes using the following ekctl command
 
 ```
 eksctl create cluster --name=kf-sm-workshop --nodes=6 --managed --alb-ingress-access --region=us-west-2
