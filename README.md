@@ -1,1 +1,1 @@
-# kfaws
+Kubeflow & Amazon Sagemaker pipeline components workshop
