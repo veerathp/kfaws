@@ -29,7 +29,9 @@ brew install weaveworks/tap/eksctl
 ```
 and Windows users can use chocolatey:
 
+```
 chocolatey install eksctl
+```
 
 Confirm the ekctl command works by executing the following command
 
