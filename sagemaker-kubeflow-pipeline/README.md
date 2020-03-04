@@ -43,7 +43,7 @@ aws iam attach-role-policy --role-name kfworkshop-sagemaker-kfp-role --policy-ar
 aws iam get-role --role-name kfworkshop-sagemaker-kfp-role --output text --query 'Role.Arn'
 
 ```
-let’s assign sagemaker:InvokeEndpoint permission to the Worker node IAM role
+Assign sagemaker:InvokeEndpoint permission to the Worker node IAM role
 
 ```
 cat <<EoF > sagemaker-invoke.json
