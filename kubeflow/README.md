@@ -87,9 +87,9 @@ To secure your installation, Follow the instructions to add authentication and a
 
 Wait for all the resources to become ready in the kubeflow namespace. Run the command below to check the status
 
-
+```
 kubectl get pods -n kubeflow
-
+```
 ### Kubeflow Dashboard
 
 Get Kubeflow service endpoint:
