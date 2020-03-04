@@ -2,7 +2,7 @@
 
 ## Create the cluster using the [ekctl](https://eksctl.io/) CLI
 
-### Step 0: Prerequisites
+### Prerequisites
 
 1. Install and configure AWS CLI 
 
@@ -11,7 +11,7 @@
 
 
 
-### Step 1: Download the ekctl CLI, Create an EKS Cluster, Install Kubernetes Dashboard
+### Download the ekctl CLI, Create an EKS Cluster, Install Kubernetes Dashboard
 
 ``` 
 curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
