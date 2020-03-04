@@ -42,11 +42,12 @@ export KF_DIR=${BASE_DIR}/${KF_NAME}
 
 Download your configuration files, so that you can customize the configuration before deploying Kubeflow:
 
+```
 mkdir -p ${KF_DIR}
 cd ${KF_DIR}
 wget -O kfctl_aws.yaml $CONFIG_URI
 export CONFIG_FILE=${KF_DIR}/kfctl_aws.yaml
-
+```
 
 ### Setup your Kubeflow configuration
 
