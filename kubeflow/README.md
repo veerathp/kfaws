@@ -110,6 +110,12 @@ In the quick shortcuts, click on the "Create a Notebook server" link an select t
 
 Once the notebook server is created, Click on CONNECT. This opens the Jupyter notebook interface in a new browser tab.
 
+Open the terminal using "New"/"Terminal"  dropdown in the notebook interface. Clone the github repository
+
+```
+git clone https://github.com/veerathp/kfaws.git
+```
+
 ### Setup AWS credentials in EKS cluster
 
 These credentials are stored in EKS cluster as Kubernetes secrets.
