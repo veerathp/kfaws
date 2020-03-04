@@ -58,11 +58,13 @@ sed -i'.bak' -e 's/kubeflow-aws/'"$AWS_CLUSTER_NAME"'/' ${CONFIG_FILE}
 ```
 Retrieve the AWS Region and IAM role name for your worker nodes. To get the IAM role name for your Amazon EKS worker node, run the following command:
 
+```
 aws iam list-roles \
     | jq -r ".Roles[] \
     | select(.RoleName \
     | startswith(\"eksctl-$AWS_CLUSTER_NAME\") and contains(\"NodeInstanceRole\")) \
     .RoleName"
+```
 
 Note: The above command assumes that you used eksctl to create your cluster. If you use other provisioning tools to create your worker node groups, find the role that is associated with your worker nodes in the Amazon EC2 console.
 
