@@ -108,7 +108,57 @@ In the Kubeflow dashboard, click on Create a new Notebook server:
 
 In the quick shortcuts, click on the "Create a Notebook server" link an select the namespace created above, provide the required details and click launch.
 
+Once the notebook server is created, Click on CONNECT. This opens the Jupyter notebook interface in a new browser tab.
 
+### Setup AWS credentials in EKS cluster
+
+These credentials are stored in EKS cluster as Kubernetes secrets.
+
+Create an IAM user ‘kf-s3user’, attach S3 access policy and retrieve temporary credentials
+
+
+```
+aws iam create-user --user-name kf-s3user
+aws iam attach-user-policy --user-name kf-s3user --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess
+aws iam create-access-key --user-name s3user > /tmp/create_output.json
+```
+
+Next, save the new user’s credentials into  environment variables:
+
+```
+export AWS_ACCESS_KEY_ID_VALUE=$(jq -j .AccessKey.AccessKeyId /tmp/create_output.json | base64)
+export AWS_SECRET_ACCESS_KEY_VALUE=$(jq -j .AccessKey.SecretAccessKey /tmp/create_output.json | base64)
+```
+
+Create the kubernetes secret:
+
+```
+cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: Secret
+metadata:
+  name: aws-secret
+type: Opaque
+data:
+  AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID_VALUE
+  AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY_VALUE
+EOF
+
+```
+
+Create an S3 bucket to store training data:
+
+```
+export S3_BUCKET=pv-kf-workshop-data
+export AWS_REGION=us-west-2
+aws s3 mb s3://$S3_BUCKET --region $AWS_REGION
+```
+
+Run training using pod
+
+```
+kubectl create -f mnist-training.yaml
+```
 
 
 
