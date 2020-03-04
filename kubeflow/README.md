@@ -120,7 +120,7 @@ Create an IAM user ‘kf-s3user’, attach S3 access policy and retrieve tempora
 ```
 aws iam create-user --user-name kf-s3user
 aws iam attach-user-policy --user-name kf-s3user --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess
-aws iam create-access-key --user-name s3user > /tmp/create_output.json
+aws iam create-access-key --user-name kf-s3user > /tmp/create_output.json
 ```
 
 Next, save the new user’s credentials into  environment variables:
