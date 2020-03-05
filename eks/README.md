@@ -1,6 +1,6 @@
 # Create an Amazon EKS Cluster
 
-## Create the cluster using the [ekctl](https://eksctl.io/) CLI
+## Create the cluster using the [eksctl](https://eksctl.io/) CLI
 
 ### Prerequisites
 
